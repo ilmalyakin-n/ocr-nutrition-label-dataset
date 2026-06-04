@@ -153,24 +153,25 @@ File `labels.csv` memiliki dua kolom:
 ```
 file_name,text
 calories_0001.png,Calories: 250 kcal
-fat_0001.png,Total Fat: 8 g
-carbs_0001.png,Carbohydrates: 30 g
-sugar_0001.png,Sugar: 12 g
-sodium_0001.png,Sodium: 480 mg
+fat_0001.png,Total Fat 8 g
+carbs_0001.png,Carbohydrates 30 g
+sugar_0001.png,Sugar 12 g
+sodium_0001.png,Sodium 480 mg
 ```
 
-Label diisi **secara manual** oleh data scientist setelah review gambar satu per satu, memastikan akurasi teks sesuai dengan konten gambar crop.
+Label diisi **secara otomatis menggunakan EasyOCR berdasarkan tulisan asli pada gambar lalu dilakukan pengecekan manual** oleh data scientist setelah review gambar satu per satu, memastikan akurasi teks sesuai dengan konten gambar crop.
 
 ---
 
-## ☁️ Akses Dataset (Google Drive)
+## 📦 Download Dataset
 
-Dataset lengkap tersedia di Google Drive:
+| Versi | Kondisi | Jumlah Gambar | Link |
+|---|---|---|---|
+| v1.0-raw | Mentah, sebelum cleaning | 2.490 | [Download](https://github.com/ilmalyakin-n/ocr-nutrition-label-dataset/releases/tag/untagged-3c6c4b733839c125b72f) |
+| v2.0-cleaned | Bersih, siap training | 2.391 | [Download](https://github.com/ilmalyakin-n/ocr-nutrition-label-dataset/releases/tag/v2.0-cleaned) |
 
-🔗 **[Download Dataset — Google Drive](https://drive.google.com/drive/folders/16s37U7-6pC2BhObfmi-6iRmdQ5KVm4X5?usp=sharing)**
-
-> Akses berisi folder `cleaned/` dengan gambar dan label siap training.
-
+> Untuk akses kode program dan seluruh file proyek lengkap (notebook, EDA output, dokumentasi):
+> 🔗 **[Google Drive — Proyek Lengkap](https://drive.google.com/drive/folders/16s37U7-6pC2BhObfmi-6iRmdQ5KVm4X5?usp=sharing)**
 ---
 
 ## 🛠️ Tools & Teknologi
@@ -192,15 +193,7 @@ Dataset lengkap tersedia di Google Drive:
 3. **CTC Loss wajib digunakan** karena lebar gambar bervariasi (200–1400px)
 4. **Charset** mencakup huruf Latin (A-Z, a-z), angka (0-9), spasi, titik dua, titik, dan satuan (g, mg, kcal)
 5. **Jangan resize ulang tinggi** — gambar sudah di-resize ke 64px, cukup normalisasi pixel saja
-
----
-
-## 👤 Kontributor
-
-**Ilmal** — Data Scientist  
-Mahasiswa Sistem Informasi, Universitas Al Ghifari  
-Fokus: AI, Data Science, Computer Vision
-
+6. 
 ---
 
 *Dataset ini disiapkan sebagai bagian dari proyek pengembangan sistem OCR deteksi informasi gizi pada kemasan makanan dan minuman.*
